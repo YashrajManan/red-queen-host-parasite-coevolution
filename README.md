@@ -90,11 +90,7 @@ exception.
 
 Both models here are the simplest real versions of their architecture: two genotypes per species (not
 many-allele), deterministic discrete-generation recursions (not a stochastic finite-population model where
-genetic drift could interact with the oscillation/equilibrium boundary found here). A real bug was found and
-fixed during this build — a clipping bound typo (`1e6` instead of `1e-6`) that silently switched off host-side
-selection in the MA model without throwing any error, caught only by comparing printed numbers line-by-line
-against an independent reference solution. Extending to many-allele versions of both models and to a
-stochastic finite-population simulation are real, disclosed next steps, not claims already covered here.
+genetic drift could interact with the oscillation/equilibrium boundary found here). Extending to many-allele versions of both models and to a stochastic finite-population simulation are real, disclosed next steps, not claims already covered here.
 
 ## Reproducible code
 
