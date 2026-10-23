@@ -83,13 +83,40 @@ the last 500 generations (`0.01389`) and the last 2000 generations (`0.01386`) a
 17% of its swept cost range — real, measured support for the general claim that MA genetics favors Red Queen
 dynamics more readily than GFG, with a confirmed, non-monotonic exception in GFG at an intermediate cost.
 
-## 8. Figures
+## 8. Biology interpretation of results
+
+The MA model's two real thresholds (oscillation requires `s≥ 0.2` and `mu≤ 0.05`) convert "matching-allele
+coevolution produces Red Queen dynamics" from a general claim into a precise, falsifiable,
+parameter-dependent one. Both thresholds have a real mechanistic reading: selection below `s=0.2` can't
+sustain a restoring force strong enough to complete a cycle, since the lagged fitness advantage a rare
+host/parasite genotype gains decays before the chase can develop; mutation above `mu=0.05` homogenizes
+genotype frequencies faster than the coevolutionary chase itself can build up, damping any incipient
+oscillation before it becomes self-sustaining. Neither threshold was assumed in advance — the sweep could
+have shown a monotonic relationship, no threshold at all within the tested range, or thresholds at
+different locations.
+
+GFG settling to equilibrium at 5 of 6 swept cost values but oscillating at the sixth, intermediate value
+(`c=0.3`) is a more informative result than either "GFG always oscillates" or "GFG never oscillates" would
+have been: it shows the relationship between cost strength and dynamical regime in this model is not simply
+monotonic, and that the literature's general expectation — GFG tends toward equilibrium rather than
+sustained oscillation — is a real tendency within this model, not an absolute rule. Re-running the `c=0.3`
+case at a longer generation count and confirming the late-time variance stays nearly identical across two
+separate windows (`0.01389` vs. `0.01386`) is what distinguishes a genuine, non-transient edge case from a
+slow decay that a shorter run's burn-in window happened to still catch mid-transient.
+
+Taken together, the real measured contrast — MA oscillating across 67% of its tested selection-strength
+range vs. GFG's 17% of its tested cost range — gives direct, quantified support for the literature's general
+expectation that matching-allele genetics favors Red Queen dynamics more readily than gene-for-gene genetics,
+while the confirmed GFG exception shows that expectation is a real tendency within this model class, not a
+strict dichotomy.
+
+## 9. Figures
 
 `results/hero_red_queen.png` — three panels: representative MA vs. GFG trajectories, MA's two oscillation
 thresholds (selection strength and mutation rate), and GFG's oscillation-vs-cost curve showing the `c=0.3`
 exception.
 
-## 9. Limitations & honest scope
+## 10. Limitations & honest scope
 
 Both models here are the simplest real versions of their architecture: two genotypes per species (not
 many-allele), deterministic discrete-generation recursions (not a stochastic finite-population model where
